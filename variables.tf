@@ -6,7 +6,7 @@ variable "environment" {
 }
 variable "region" {
     type = string
-    default = "us-east-1"
+    default = "US-EAST-1"
 }
 variable "access_key" {
     type = string
