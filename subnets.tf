@@ -5,7 +5,7 @@ locals {
 resource "aws_subnet" "public-subnet-1" {
     vpc_id = data.aws_vpc.existing_vpc.id
     cidr_block = var.cidr_blocks[1].cidr_block
-    availability_zones = local.availability_zones
+    availability_zone = local.availability_zones
     tags = {
         Name = "${lower(var.vendor)}-${lower(var.environment)}-public-${local.availability_zones}"
     }
