@@ -7,8 +7,7 @@ resource "aws_subnet" "public-subnet-1" {
     cidr_block = var.cidr_blocks[1].cidr_block
     availability_zones = local.availability_zones
     tags = {
-        Name = "${lower(var.vendor)}-${lower(var.environment)}-
-        public-${local.availability_zones}"
+        Name = "${lower(var.vendor)}-${lower(var.environment)}-public-${local.availability_zones}"
     }
 }
 
@@ -17,7 +16,6 @@ resource "aws_subnet" "private-subnet-1" {
     cidr_block = var.cidr_blocks[2].cidr_block
     availability_zone = local.availability_zones
     tags = {
-        Name = "${lower(var.vendor)}-${lower(var.environment)}-
-        private-${local.availability_zones}"
+        Name = "${lower(var.vendor)}-${lower(var.environment)}-private-${local.availability_zones}"
     }
 }
