@@ -12,17 +12,17 @@ pipeline {
     stages {
         stage ('Terraform Init'){
             steps {
-                bat "set TF_VAR_region='${env.aws_region}' && set TF_VAR_access_key='${env.access_key}' && export TF_VAR_secret_key='${env.secret_key}' && terraform init"
+                bat "set TF_VAR_region='${env.aws_region}' && set TF_VAR_access_key='${env.access_key}' && set TF_VAR_secret_key='${env.secret_key}' && terraform init"
             }
         }
         stage ('Terraform Plan'){
             steps {
-                bat "set TF_VAR_region='${env.aws_region}' && set TF_VAR_access_key='${env.access_key}' && export TF_VAR_secret_key='${env.secret_key}' && terraform plan -var-file terraform-dev.tfvars" 
+                bat "set TF_VAR_region='${env.aws_region}' && set TF_VAR_access_key='${env.access_key}' && set TF_VAR_secret_key='${env.secret_key}' && terraform plan -var-file terraform-dev.tfvars" 
             }
         }
         stage ('Terraform Apply & Deploy Docker Image on Webserver'){
             steps {
-                bat "set TF_VAR_region='${env.aws_region}' && set TF_VAR_access_key='${env.access_key}' && export TF_VAR_secret_key='${env.secret_key}' && terraform apply -var-file terraform-dev.tfvars -auto-approve"
+                bat "set TF_VAR_region='${env.aws_region}' && set TF_VAR_access_key='${env.access_key}' && set TF_VAR_secret_key='${env.secret_key}' && terraform apply -var-file terraform-dev.tfvars -auto-approve"
             }
         }
     }
