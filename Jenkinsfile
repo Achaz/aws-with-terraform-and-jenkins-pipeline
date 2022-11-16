@@ -4,9 +4,9 @@ properties([ parameters([
   string( name: 'AWS_REGION', defaultValue: 'us-east-1'),
 ]), pipelineTriggers([]) ])
 // Environment Variables.
-env.access_key = AWS_ACCESS_KEY_ID
-env.secret_key = AWS_SECRET_ACCESS_KEY
-env.region = AWS_REGION
+env.access_key =AWS_ACCESS_KEY_ID
+env.secret_key =AWS_SECRET_ACCESS_KEY
+env.region =AWS_REGION
 pipeline {
     agent any
     stages {
